@@ -21,15 +21,24 @@
           </div>
   
           <button class="submit-btn" type="submit">Create Account</button>
+          <div v-if="showMessage" class="message-bar">
+<p>
+{{showMessage}}
+</p>
+</div>
         </form>
       </div>
     </div>
+    
+
+
   </template>
   
 <script setup>
 import { users } from '@/data/Users';
 import { reactive, ref } from 'vue';
-  
+import { useRouter } from 'vue-router';
+
 
 const userData = reactive({
     id:Date.now(),
@@ -37,20 +46,54 @@ const userData = reactive({
     email:'',
     password:''
 })
+
+const showMessage = ref(null)
 const checkEmail = ref(false)
+const router = useRouter()
+
+function showNotification(message){
+        showMessage.value = message
+
+        setTimeout( () => {
+            showMessage.value = null
+        },3000 )
+    }
 
 function handleSubmit(){
 
     if(users.some( user => user.email == userData.email )){
         checkEmail.value = true
     } else {
-        users.push(userData)
+      debugger
+        users.push(userData);
+        showNotification('Account Created Successfully')
+        // router.push('/login')
     }
 
 }
 </script>
 
 <style scoped>
+
+.message-bar {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    padding: 20px 30px;
+    text-align: center;
+    background: lightskyblue;
+    color: white;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
   .auth-container {
     min-height: 100vh;
     display: flex;

@@ -6,12 +6,12 @@
       <form class="auth-form" @submit.prevent="handleSubmit" >
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" v-model="userdata.email" id="email" placeholder="Enter your email" />
+          <input type="email" v-model="userdata.email" id="email" placeholder="Enter your email" required />
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" v-model="userdata.password" placeholder="Enter your password" />
+          <input type="password" id="password" v-model="userdata.password" placeholder="Enter your password" required />
         </div>
 
         <button class="submit-btn" type="submit">
@@ -23,17 +23,31 @@
 </template>
 
 <script setup>
+
+import { users } from '@/data/Users';
 import { reactive, ref } from 'vue';
 
-
+const showMessage = ref('')
 const userdata = reactive({
   id : Date.now(),
   email : '',
   password:''
 })
 
+function showNotification(message){
+        
+
+        setTimeout( () => {
+            showMessage = null
+        },3000 )
+    }
+
 function handleSubmit(){
-  
+
+    if(users.some( value => value.email == userdata.email && value.password==userdata.password )){
+
+    }
+
 }
 
 
