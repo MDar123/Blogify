@@ -25,27 +25,23 @@
 <script setup>
 
 import { users } from '@/data/Users';
-import { reactive, ref } from 'vue';
+import { inject, reactive } from 'vue';
+import { useRouter } from 'vue-router';
 
-const showMessage = ref('')
+
 const userdata = reactive({
   id : Date.now(),
   email : '',
   password:''
 })
-
-function showNotification(message){
-        
-
-        setTimeout( () => {
-            showMessage = null
-        },3000 )
-    }
+const router = useRouter()
+const { chekUserLoggedIn } = inject("userstatus")
 
 function handleSubmit(){
 
     if(users.some( value => value.email == userdata.email && value.password==userdata.password )){
-
+        chekUserLoggedIn(true)
+        router.push("/dashboard")
     }
 
 }
