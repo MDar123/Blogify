@@ -3,7 +3,9 @@
       <div class="hero-content">
         <h1>Human <br /> stories & ideas</h1>
         <p class="subtitle">A place to read, write, and deepen your understanding</p>
-        <button class="cta-btn">Start reading</button>
+        <button class="cta-btn">
+          <RouterLink to="/login" class="nav-link">Start reading</RouterLink>
+          </button>
       </div>
       <div class="hero-image">
         <img src="https://miro.medium.com/v2/format:webp/4*SdjkdS98aKH76I8eD0_qjw.png" alt="Hero Illustration" />

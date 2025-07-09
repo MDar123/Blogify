@@ -1,9 +1,9 @@
 <template>
-<Form name="Login Form" buttonText="Login" />
+<LoginForm  />
 </template>
 
 
 <script setup>
-import Form from '@/components/Form.vue';
+import LoginForm from '@/components/LoginForm.vue';
 
 </script>

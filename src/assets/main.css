@@ -3,3 +3,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.nav-link {
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    color: #4f46e5;
+  }
+  

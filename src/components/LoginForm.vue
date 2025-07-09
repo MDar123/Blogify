@@ -1,21 +1,21 @@
 <template>
   <div class="auth-container">
     <div class="auth-box">
-      <h2 class="form-title"> {{ props.name }} </h2>
+      <h2 class="form-title"> Login Form </h2>
 
-      <form class="auth-form">
+      <form class="auth-form" @submit.prevent="handleSubmit" >
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" />
+          <input type="email" v-model="userdata.email" id="email" placeholder="Enter your email" />
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" />
+          <input type="password" id="password" v-model="userdata.password" placeholder="Enter your password" />
         </div>
 
         <button class="submit-btn" type="submit">
-          {{ props.buttonText }}
+          Login
         </button>
       </form>
     </div>
@@ -23,7 +23,20 @@
 </template>
 
 <script setup>
-const props = defineProps(['name','buttonText'])
+import { reactive, ref } from 'vue';
+
+
+const userdata = reactive({
+  id : Date.now(),
+  email : '',
+  password:''
+})
+
+function handleSubmit(){
+  
+}
+
+
 </script>
 
 <style scoped>

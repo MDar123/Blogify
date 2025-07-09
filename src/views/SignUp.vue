@@ -1,9 +1,11 @@
 <template>
-<Form name="Sign up Form" buttonText="Signup" />
+<SignUpForm />
 </template>
     
     
 <script setup>
-import Form from '@/components/Form.vue';
+import SignUpForm from '@/components/SignUpForm.vue';
+
+
 
 </script>

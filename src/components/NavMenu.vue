@@ -2,7 +2,9 @@
     <ul class="nav-menu">
       <li v-for="item in navItems">
           <span v-html="item.icon"></span>
-          {{ item.name }}
+          <RouterLink :to='item.link' class="nav-link" >
+            {{ item.name }}
+          </RouterLink>
 
       </li>
     </ul>
@@ -14,8 +16,7 @@ import 'primeicons/primeicons.css'
 import { isUserLoggedIn } from '@/utils/CheckUserLogin';
 
 
-const navItems = ref([
-])
+const navItems = ref([])
 
 onMounted( ()=> {
   const isUserLogin = isUserLoggedIn();
@@ -23,10 +24,10 @@ onMounted( ()=> {
   if(!isUserLogin){
     navItems.value = [
       {
-        name : "Sign in" , link : ""
+        name : "Login" , link : "/login"
       },
       {
-        name : "Sign out" , link : ""
+        name : "Sign up" , link : "/register"
       }
     ]
   } else {

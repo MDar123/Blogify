@@ -1,6 +1,10 @@
 <template>
     <header class="main-header">
-      <div class="logo">Blogify</div>
+      <div class="logo">
+        <RouterLink to="/" class="nav-link"> 
+          Blogify
+        </RouterLink>
+      </div>
   
       <div class="search-wrapper">
         <SearchBar v-if="checkUser" />
