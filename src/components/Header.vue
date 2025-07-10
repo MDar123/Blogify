@@ -5,26 +5,15 @@
           Blogify
         </RouterLink>
       </div>
-  
-      <div class="search-wrapper">
-        <SearchBar v-if="checkUser" />
-      </div>
-  
       <nav class="nav-wrapper">
         <NavMenu />
       </nav>
     </header>
   </template>
   
-  <script setup>
-  import SearchBar from '@/components/Searchbar.vue'
-  import NavMenu from '@/components/NavMenu.vue'
-  import { isUserLoggedIn } from '@/utils/CheckUserLogin';
-import { ref } from 'vue';
+<script setup>
 
-  const checkUser = ref(false)
-  const isUserLogin = isUserLoggedIn();
-  checkUser.value = isUserLogin
+import NavMenu from '@/components/NavMenu.vue'
 
   </script>
   

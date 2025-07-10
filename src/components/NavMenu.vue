@@ -1,8 +1,8 @@
 <template>
     <ul class="nav-menu">
-      <li v-for="item in navItems">
+      <li v-for="item in navItemsList">
           <span v-html="item.icon"></span>
-          <RouterLink :to='item.link' class="nav-link" >
+          <RouterLink :to="item.link " class="nav-link" >
             {{ item.name }}
           </RouterLink>
 
@@ -11,18 +11,15 @@
   </template>
   
 <script setup>
-import { onMounted, ref } from 'vue';
+import { computed,ref } from 'vue';
 import 'primeicons/primeicons.css'
-import { isUserLoggedIn } from '@/utils/CheckUserLogin';
+import { isUserLogin } from '@/data/CheckUserLogin';
 
+const navItems = ref([]);
 
-const navItems = ref([])
-
-onMounted( ()=> {
-  const isUserLogin = isUserLoggedIn();
-
-  if(!isUserLogin){
-    navItems.value = [
+ const navItemsList = computed( ()=> {
+  if(!isUserLogin.status){
+   return navItems.value = [
       {
         name : "Login" , link : "/login"
       },
@@ -31,7 +28,7 @@ onMounted( ()=> {
       }
     ]
   } else {
-    navItems.value = [ 
+    return  navItems.value = [ 
       {
         name : "Write a post" , link : "" , icon : '<span class="pi pi-pencil"></span>'
       },

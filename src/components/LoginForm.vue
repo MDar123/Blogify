@@ -25,7 +25,8 @@
 <script setup>
 
 import { users } from '@/data/Users';
-import { inject, reactive } from 'vue';
+import { isUserLogin } from '@/data/CheckUserLogin';
+import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
 
 
@@ -35,13 +36,15 @@ const userdata = reactive({
   password:''
 })
 const router = useRouter()
-const { chekUserLoggedIn } = inject("userstatus")
+
 
 function handleSubmit(){
 
     if(users.some( value => value.email == userdata.email && value.password==userdata.password )){
-        chekUserLoggedIn(true)
+      isUserLogin.status = true
         router.push("/dashboard")
+    } else {
+      alert("Fail Log in attempt .Check Your Credentials")
     }
 
 }

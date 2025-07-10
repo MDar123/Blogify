@@ -24,6 +24,7 @@
     min-height: 100vh;
     box-sizing: border-box;
     flex-wrap: wrap;
+    margin-top: 50px;
   }
   
   .sidebar {

@@ -69,6 +69,7 @@ function handleSubmit() {
   } else {
 
     users.push(userData);
+    localStorage.setItem("userId",String(userData.id))
     router.push('/login')
   }
 }

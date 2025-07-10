@@ -4,7 +4,8 @@
         <h1>Human <br /> stories & ideas</h1>
         <p class="subtitle">A place to read, write, and deepen your understanding</p>
         <button class="cta-btn">
-          <RouterLink to="/login" class="nav-link">Start reading</RouterLink>
+          <RouterLink to="/login" v-if="!userStatus" class="nav-link">Start reading</RouterLink>
+          <RouterLink to="/dashboard" v-if="userStatus" class="nav-link">Go to Dashboard</RouterLink>
           </button>
       </div>
       <div class="hero-image">
@@ -13,6 +14,19 @@
     </section>
   </template>
   
+<script setup>
+import { isUserLogin } from '@/data/CheckUserLogin';
+import { computed } from 'vue';
+const userStatus = computed( () => {
+  if(!isUserLogin.status){
+    return false
+  } else {
+    return true
+  }
+} )
+
+</script>
+
 <style scoped>
   .hero-section {
     display: flex;
