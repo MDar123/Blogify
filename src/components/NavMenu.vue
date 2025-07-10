@@ -23,14 +23,11 @@ const navItems = ref([]);
       {
         name : "Login" , link : "/login"
       },
-      {
-        name : "Sign up" , link : "/register"
-      }
     ]
   } else {
     return  navItems.value = [ 
       {
-        name : "Write a post" , link : "" , icon : '<span class="pi pi-pencil"></span>'
+        name : "Write a Blog" , link : "" , icon : '<span class="pi pi-pencil"></span>'
       },
       {
         name : "User Profile" , link : "" , icon : '<span class="pi pi-user"></span>'

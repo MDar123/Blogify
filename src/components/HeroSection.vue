@@ -4,7 +4,7 @@
         <h1>Human <br /> stories & ideas</h1>
         <p class="subtitle">A place to read, write, and deepen your understanding</p>
         <button class="cta-btn">
-          <RouterLink to="/login" v-if="!userStatus" class="nav-link">Start reading</RouterLink>
+          <RouterLink to="/register" v-if="!userStatus" class="nav-link">Start reading</RouterLink>
           <RouterLink to="/dashboard" v-if="userStatus" class="nav-link">Go to Dashboard</RouterLink>
           </button>
       </div>

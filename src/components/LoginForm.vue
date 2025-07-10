@@ -31,7 +31,6 @@ import { useRouter } from 'vue-router';
 
 
 const userdata = reactive({
-  id : Date.now(),
   email : '',
   password:''
 })

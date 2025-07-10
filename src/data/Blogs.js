@@ -1,25 +1,96 @@
-import { reactive } from "vue"
+import { reactive } from 'vue';
 
 export const blogs = reactive([
+
   {
-    id: 1,
-    title: 'Vue 3 Composition API Guide',
-    content: 'Learn how to use Vue 3 with the Composition API in real apps.',
+    id: 101,
+    title: 'Mastering Vue Directives',
+    content: 'A deep dive into custom and built-in directives in Vue.',
     authorId: 1,
     likes: 5,
     comments: [
-      { id: 1, text: 'Great post!', userId: 2 },
-      { id: 2, text: 'Very helpful, thanks!', userId: 2 }
+      { id: 1, userId: 2, text: 'Loved this explanation!' },
+      { id: 2, userId: 3, text: 'Very helpful, thanks!' }
     ],
-    createdAt: '2025-07-08'
+    createdAt: '2025-07-01'
   },
   {
-    id: 2,
-    title: 'Getting Started with Vue Router',
-    content: 'This blog explains how to setup routing in Vue apps.',
-    authorId: 2,
+    id: 102,
+    title: 'Vue 3 vs React: A Fair Comparison',
+    content: 'Let’s compare Vue 3 Composition API with React Hooks.',
+    authorId: 1,
     likes: 3,
     comments: [],
-    createdAt: '2025-07-09'
+    createdAt: '2025-07-02'
+  },
+
+
+  {
+    id: 103,
+    title: 'CSS Grid for Beginners',
+    content: 'How to use CSS Grid Layout with real-world examples.',
+    authorId: 2,
+    likes: 6,
+    comments: [
+      { id: 3, userId: 4, text: 'Great article!' }
+    ],
+    createdAt: '2025-07-03'
+  },
+  {
+    id: 104,
+    title: 'Understanding Flexbox in 2025',
+    content: 'Quick guide to mastering Flexbox layout techniques.',
+    authorId: 2,
+    likes: 4,
+    comments: [],
+    createdAt: '2025-07-04'
+  },
+
+
+  {
+    id: 105,
+    title: 'JavaScript ES2025 Features',
+    content: 'Explore what’s new in the latest version of JavaScript.',
+    authorId: 3,
+    likes: 7,
+    comments: [
+      { id: 4, userId: 1, text: 'Very useful content!' }
+    ],
+    createdAt: '2025-07-05'
+  },
+  {
+    id: 106,
+    title: 'Handling Forms in Vue 3',
+    content: 'Learn form validation and v-model bindings.',
+    authorId: 3,
+    likes: 2,
+    comments: [],
+    createdAt: '2025-07-06'
+  },
+
+  {
+    id: 107,
+    title: 'Deploying Vue Apps to Netlify',
+    content: 'Step-by-step guide to deploying your Vue project.',
+    authorId: 4,
+    likes: 1,
+    comments: [],
+    createdAt: '2025-07-07'
+  },
+  {
+    id: 108,
+    title: 'State Management Without Vuex',
+    content: 'Using Pinia and Composition API for app-wide state.',
+    authorId: 4,
+    likes: 5,
+    comments: [
+      { id: 5, userId: 2, text: 'That’s exactly what I needed!' },
+      { id: 6, userId: 3, text: 'Thanks for sharing!' }
+    ],
+    createdAt: '2025-07-08'
   }
-])
+]);
+
+export default function getCurrentBlog(id){
+return blogs.filter( item => item.id == id)[0]
+}
