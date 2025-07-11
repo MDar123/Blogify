@@ -41,7 +41,7 @@ function handleSubmit(){
 
     if(users.some( value => value.email == userdata.email && value.password==userdata.password )){
       isUserLogin.status = true
-        router.push("/dashboard")
+      router.push("/dashboard")
     } else {
       alert("Fail Log in attempt .Check Your Credentials")
     }

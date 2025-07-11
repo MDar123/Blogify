@@ -8,9 +8,10 @@ export const blogs = reactive([
     content: 'A deep dive into custom and built-in directives in Vue.',
     authorId: 1,
     likes: 5,
+    isLiked : false,
     comments: [
-      { id: 1, userId: 2, text: 'Loved this explanation!' },
-      { id: 2, userId: 3, text: 'Very helpful, thanks!' }
+      { text: 'Loved this explanation!' },
+      { text: 'Very helpful, thanks!' }
     ],
     createdAt: '2025-07-01'
   },
@@ -20,6 +21,7 @@ export const blogs = reactive([
     content: 'Let’s compare Vue 3 Composition API with React Hooks.',
     authorId: 1,
     likes: 3,
+    isLiked : false,
     comments: [],
     createdAt: '2025-07-02'
   },
@@ -31,8 +33,9 @@ export const blogs = reactive([
     content: 'How to use CSS Grid Layout with real-world examples.',
     authorId: 2,
     likes: 6,
+    isLiked : false,
     comments: [
-      { id: 3, userId: 4, text: 'Great article!' }
+      { text: 'Great article!' }
     ],
     createdAt: '2025-07-03'
   },
@@ -42,6 +45,7 @@ export const blogs = reactive([
     content: 'Quick guide to mastering Flexbox layout techniques.',
     authorId: 2,
     likes: 4,
+    isLiked : false,
     comments: [],
     createdAt: '2025-07-04'
   },
@@ -53,8 +57,9 @@ export const blogs = reactive([
     content: 'Explore what’s new in the latest version of JavaScript.',
     authorId: 3,
     likes: 7,
+    isLiked : false,
     comments: [
-      { id: 4, userId: 1, text: 'Very useful content!' }
+      { text: 'Very useful content!' }
     ],
     createdAt: '2025-07-05'
   },
@@ -64,6 +69,7 @@ export const blogs = reactive([
     content: 'Learn form validation and v-model bindings.',
     authorId: 3,
     likes: 2,
+    isLiked : false,
     comments: [],
     createdAt: '2025-07-06'
   },
@@ -74,6 +80,7 @@ export const blogs = reactive([
     content: 'Step-by-step guide to deploying your Vue project.',
     authorId: 4,
     likes: 1,
+    isLiked : false,
     comments: [],
     createdAt: '2025-07-07'
   },
@@ -83,9 +90,10 @@ export const blogs = reactive([
     content: 'Using Pinia and Composition API for app-wide state.',
     authorId: 4,
     likes: 5,
+    isLiked : false,
     comments: [
-      { id: 5, userId: 2, text: 'That’s exactly what I needed!' },
-      { id: 6, userId: 3, text: 'Thanks for sharing!' }
+      { text: 'That’s exactly what I needed!' },
+      { text: 'Thanks for sharing!' }
     ],
     createdAt: '2025-07-08'
   }

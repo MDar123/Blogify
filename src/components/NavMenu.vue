@@ -27,9 +27,6 @@ const navItems = ref([]);
   } else {
     return  navItems.value = [ 
       {
-        name : "Write a Blog" , link : "" , icon : '<span class="pi pi-pencil"></span>'
-      },
-      {
         name : "User Profile" , link : "" , icon : '<span class="pi pi-user"></span>'
       }
     ]
